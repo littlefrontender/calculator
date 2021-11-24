@@ -9,7 +9,12 @@ class Background extends Component {
         super(props);
         this.state = {
             input: ''
-        }
+        };
+        this.myRef = React.createRef();
+    }
+    
+    componentDidMount() {
+        this.myRef.current.focus(); // фокус на Input
     }
 
     onChangeInput = e => {
@@ -20,6 +25,7 @@ class Background extends Component {
 
     onClean = () => {
         this.setState({input: ''});
+        this.myRef.current.focus(); // фокус на Input
     }
 
     onDelete = () => {
@@ -90,7 +96,7 @@ class Background extends Component {
                                     onChange={this.onChange}
                                     onKeyDown={this.onChangeKeyboard}
                                     type='text'
-                                    autoFocus
+                                    ref={this.myRef}
                                 />
                             </InputGroup>
                         </Col>
