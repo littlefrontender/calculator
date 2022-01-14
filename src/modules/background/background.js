@@ -106,67 +106,69 @@ class Background extends Component {
 
         return (
             <div className={`${bg} bg-calc d-flex p-2`}>
-                <Container >
-                    <Row xs={3} sm={12} className='pb-2'>
-                        <Col>
-                            <InputGroup>
-                            <InputGroup.Text className={`${bg} ${color}`} id="result">Result</InputGroup.Text>
-                                <FormControl
-                                    aria-label="result"
-                                    aria-describedby="result"
-                                    value={this.state.input}
-                                    onChange={this.onChange}
-                                    onKeyDown={this.onChangeKeyboard}
-                                    ref={this.myRef}
-                                    type='text'
-                                    className={`${bg} ${color}`}
-                                />
-                            </InputGroup>
-                        </Col>
-                    </Row>
-                    <Row xs={3} sm={12} className="pt-1">                  
-                        <ButtonGroup size="lg" className="mb-2">
-                            <Button variant={variant1} onClick={this.onClean}>C</Button>
-                            <Button variant={variant1} value='÷' onClick={this.onChangeInput}>÷</Button>
-                            <Button variant={variant1} value='×' onClick={this.onChangeInput}>×</Button>
-                            <Button variant={variant1} onClick={this.onDelete}>D</Button>
-                        </ButtonGroup>
-                    </Row>
-                    <Row xs={3} sm={12}>                    
-                        <ButtonGroup size="lg" className="mb-2">
-                            <Button variant={variant2} value='7' onClick={this.onChangeInput}>7</Button>
-                            <Button variant={variant2} value='8' onClick={this.onChangeInput}>8</Button>
-                            <Button variant={variant2} value='9' onClick={this.onChangeInput}>9</Button>
-                            <Button variant={variant1} value='-' onClick={this.onChangeInput}>–</Button>
-                        </ButtonGroup>
-                    </Row>
-                    <Row xs={3} sm={12}>                    
-                        <ButtonGroup size="lg" className="mb-2">
-                            <Button variant={variant2} value='4' onClick={this.onChangeInput}>4</Button>
-                            <Button variant={variant2} value='5' onClick={this.onChangeInput}>5</Button>
-                            <Button variant={variant2} value='6' onClick={this.onChangeInput}>6</Button>
-                            <Button variant={variant1} value='+' onClick={this.onChangeInput}>+</Button>
-                        </ButtonGroup>
-                    </Row>
-                    <Row xs={3} sm={12}>                    
-                        <ButtonGroup size="lg" className="mb-2">
-                            <Button variant={variant2} value='1' onClick={this.onChangeInput}>1</Button>
-                            <Button variant={variant2} value='2' onClick={this.onChangeInput}>2</Button>
-                            <Button variant={variant2} value='3' onClick={this.onChangeInput}>3</Button>
-                            <Button variant={variant1} onClick={this.calculation}>=</Button>
-                        </ButtonGroup>
-                    </Row>
-                    <Row xs={3} sm={12}>                    
-                        <ButtonGroup size="lg" className="mb-2">
-                            <Button variant={variant2} value='0' onClick={this.onChangeInput}>0</Button>
-                            <Button variant={variant1} value='.' onClick={this.onChangeInput}>.</Button>
-                        </ButtonGroup>
-                    </Row>
-                <Button
-                variant={this.state.themeDark ? 'light' : 'dark'} 
-                onClick={this.onToggle}
-                >Change theme</Button>
-                </Container>
+                <div className='bg-cont'>
+                    <Container >
+                        <Row className='pb-2'>
+                            <Col>
+                                <InputGroup>
+                                <InputGroup.Text className={`${bg} ${color}`} id="result">Result</InputGroup.Text>
+                                    <FormControl
+                                        aria-label="result"
+                                        aria-describedby="result"
+                                        value={this.state.input}
+                                        onChange={this.onChange}
+                                        onKeyDown={this.onChangeKeyboard}
+                                        ref={this.myRef}
+                                        type='text'
+                                        className={`${bg} ${color}`}
+                                    />
+                                </InputGroup>
+                            </Col>
+                        </Row>
+                        <Row className="pt-1">                  
+                            <ButtonGroup size="lg" className="mb-2">
+                                <Button variant={variant1} onClick={this.onClean}>C</Button>
+                                <Button variant={variant1} value='÷' onClick={this.onChangeInput}>÷</Button>
+                                <Button variant={variant1} value='×' onClick={this.onChangeInput}>×</Button>
+                                <Button variant={variant1} onClick={this.onDelete}>D</Button>
+                            </ButtonGroup>
+                        </Row>
+                        <Row >                    
+                            <ButtonGroup size="lg" className="mb-2">
+                                <Button variant={variant2} value='7' onClick={this.onChangeInput}>7</Button>
+                                <Button variant={variant2} value='8' onClick={this.onChangeInput}>8</Button>
+                                <Button variant={variant2} value='9' onClick={this.onChangeInput}>9</Button>
+                                <Button variant={variant1} value='-' onClick={this.onChangeInput}>–</Button>
+                            </ButtonGroup>
+                        </Row>
+                        <Row >                    
+                            <ButtonGroup size="lg" className="mb-2">
+                                <Button variant={variant2} value='4' onClick={this.onChangeInput}>4</Button>
+                                <Button variant={variant2} value='5' onClick={this.onChangeInput}>5</Button>
+                                <Button variant={variant2} value='6' onClick={this.onChangeInput}>6</Button>
+                                <Button variant={variant1} value='+' onClick={this.onChangeInput}>+</Button>
+                            </ButtonGroup>
+                        </Row>
+                        <Row >                    
+                            <ButtonGroup size="lg" className="mb-2">
+                                <Button variant={variant2} value='1' onClick={this.onChangeInput}>1</Button>
+                                <Button variant={variant2} value='2' onClick={this.onChangeInput}>2</Button>
+                                <Button variant={variant2} value='3' onClick={this.onChangeInput}>3</Button>
+                                <Button variant={variant1} onClick={this.calculation}>=</Button>
+                            </ButtonGroup>
+                        </Row>
+                        <Row >                    
+                            <ButtonGroup size="lg" className="mb-2">
+                                <Button variant={variant2} value='0' onClick={this.onChangeInput}>0</Button>
+                                <Button variant={variant1} value='.' onClick={this.onChangeInput}>.</Button>
+                            </ButtonGroup>
+                        </Row>
+                    <Button
+                    variant={this.state.themeDark ? 'light' : 'dark'} 
+                    onClick={this.onToggle}
+                    >Change theme</Button>
+                    </Container>
+                </div>
             </div>
         )
     }
